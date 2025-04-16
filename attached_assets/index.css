@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.tech-grid {
+  background: linear-gradient(to right, #000510, #001233);
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-grid::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: 
+    linear-gradient(#0066ff 1px, transparent 1px),
+    linear-gradient(90deg, #0066ff 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+  transform: rotate(45deg);
+  animation: gridMove 15s linear infinite;
+  opacity: 0.1;
+}
+
+.tech-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    #000510 70%
+  );
+}
+
+.neon-glow {
+  text-shadow: 0 0 10px #0066ff, 0 0 20px #0066ff, 0 0 30px #0066ff;
+}
+
+.matrix-rain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    rgba(0, 255, 170, 0.1) 0%,
+    rgba(0, 255, 170, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: matrixFlow 10s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: rotate(45deg) translateY(0);
+  }
+  100% {
+    transform: rotate(45deg) translateY(40px);
+  }
+}
+
+@keyframes matrixFlow {
+  0% {
+    background-position: 50% 0%;
+  }
+  100% {
+    background-position: 50% 200%;
+  }
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
