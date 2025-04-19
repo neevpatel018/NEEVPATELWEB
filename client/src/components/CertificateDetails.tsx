@@ -70,19 +70,21 @@ const CertificateDetails: React.FC<CertificateDetailsProps> = ({ certificate, on
               </div>
             </div>
           )}
-          
+
+          {/* Certificate image preview */}
           {certificate.imagePath && (
             <div className="mt-4 flex justify-center">
               <div className="border border-blue-500/20 rounded-lg p-4 bg-gray-900/50 max-w-sm">
                 <img 
                   src={certificate.imagePath} 
                   alt={`${certificate.title} Certificate`}
-                  className="rounded-lg"
+                  className="rounded-lg w-full object-contain"
                 />
               </div>
             </div>
           )}
-          
+
+          {/* PDF content preview (optional) */}
           {certificate.pdfContent && (
             <div className="mt-4">
               <div className="border border-blue-500/20 rounded p-4 bg-gray-900/50">
@@ -95,30 +97,18 @@ const CertificateDetails: React.FC<CertificateDetailsProps> = ({ certificate, on
               </div>
             </div>
           )}
-          
-          {/* Keep the View Complete Certificate button for image certificates too */}
+
+          {/* View full certificate */}
           {(certificate.imagePath || certificate.pdfPath) && (
             <div className="mt-6 text-center">
-              {certificate.imagePath && (
-                <a 
-                  href={certificate.imagePath}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 rounded-lg text-blue-400 transition-all duration-300 hover:scale-105"
-                >
-                  View Complete Certificate
-                </a>
-              )}
-              {!certificate.imagePath && certificate.pdfPath && (
-                <a 
-                  href={certificate.pdfPath}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 rounded-lg text-blue-400 transition-all duration-300 hover:scale-105"
-                >
-                  View Complete Certificate
-                </a>
-              )}
+              <a 
+                href={certificate.imagePath || certificate.pdfPath}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 rounded-lg text-blue-400 transition-all duration-300 hover:scale-105"
+              >
+                View Complete Certificate
+              </a>
             </div>
           )}
         </div>
