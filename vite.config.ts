@@ -18,14 +18,15 @@ export default defineConfig({
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
-  base: "/NEEVPATELWEB/",
+  base: "/",
   server: {
     port: 5173,
     host: true,
     open: true
   },
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
+    sourcemap: true
   },
 });
