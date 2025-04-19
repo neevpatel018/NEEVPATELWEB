@@ -34,7 +34,7 @@ var vite_config_default = defineConfig({
     }
   },
   root: path.resolve(import.meta.dirname, "client"),
-  base: "https://neevpatel018.github.io/NEEVPATELWEB/",
+  base: "/NEEVPATELWEB/",
   server: {
     port: 5173,
     host: true,
@@ -43,8 +43,15 @@ var vite_config_default = defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
-    sourcemap: true
-  }
+    sourcemap: true,
+    assetsDir: "assets",
+    rollupOptions: {
+      input: {
+        main: path.resolve(import.meta.dirname, "client/index.html")
+      }
+    }
+  },
+  publicDir: path.resolve(import.meta.dirname, "client/public")
 });
 
 // server/vite.ts
