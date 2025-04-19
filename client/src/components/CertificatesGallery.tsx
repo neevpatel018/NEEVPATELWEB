@@ -22,7 +22,7 @@ const certificateData: Certificate[] = [
     title: 'AI for Managers by Microsoft and LinkedIn',
     platform: 'LinkedIn Learning & Microsoft',
     description: 'Apr 12, 2025 • 4 hours 24 minutes',
-    imagePath: '/certificates/AI_for_Managers.png',
+    imagePath: '/certificates/Microsoft AI Skills Fest.png',
     completionDate: 'Apr 12, 2025',
     duration: '4 hours 24 minutes',
     credentials: [
@@ -36,7 +36,7 @@ const certificateData: Certificate[] = [
     title: 'Enhance Your Coaching Impact with Generative AI',
     platform: 'LinkedIn Learning',
     description: 'Apr 12, 2025 • 38 minutes',
-    imagePath: '/certificates/Enhance_Coaching_Impact_1.png',
+    imagePath: '/certificates/Enhance Your Coaching Impact with Generative AI.png',
     completionDate: 'Apr 12, 2025',
     duration: '38 minutes',
     credentials: [
@@ -50,7 +50,7 @@ const certificateData: Certificate[] = [
     title: 'Amplify Your Critical Thinking with Generative AI',
     platform: 'LinkedIn Learning',
     description: 'Apr 12, 2025 • 1 hour',
-    imagePath: '/certificates/Amplify_Critical_Thinking_1.png',
+    imagePath: '/certificates/Amplify Your Critical Thinking with Generative AI.png',
     completionDate: 'Apr 12, 2025',
     duration: '1 hour',
     credentials: [
@@ -63,7 +63,7 @@ const certificateData: Certificate[] = [
     title: 'Building a Collaborative Team Culture with AI',
     platform: 'LinkedIn Learning',
     description: 'Apr 12, 2025 • 39 minutes',
-    imagePath: '/certificates/Building_Collaborative_Team_1.png',
+    imagePath: '/certificates/Building a Collaborative Team Culture with AI.png',
     completionDate: 'Apr 12, 2025',
     duration: '39 minutes',
     credentials: [
@@ -77,7 +77,7 @@ const certificateData: Certificate[] = [
     title: "The Manager's Guide to Career Conversations in the Age of AI",
     platform: 'LinkedIn Learning',
     description: 'Apr 08, 2025 • 57 minutes',
-    imagePath: '/certificates/Career_Conversations_AI_1.png',
+    imagePath: '/certificates/The Manager\'s Guide to Career Conversations in the Age of AI.png',
     completionDate: 'Apr 08, 2025',
     duration: '57 minutes',
     credentials: [
@@ -91,7 +91,7 @@ const certificateData: Certificate[] = [
     title: 'Become an AI-Powered People Manager',
     platform: 'LinkedIn Learning',
     description: 'Apr 08, 2025 • 45 minutes',
-    imagePath: '/certificates/AI_Powered_People_Manager.png',
+    imagePath: '/certificates/Become an AI-Powered People Manager.png',
     completionDate: 'Apr 08, 2025',
     duration: '45 minutes',
     credentials: [
@@ -113,10 +113,12 @@ const CertificatesGallery: React.FC = () => {
                 src={`/NEEVPATELWEB${cert.imagePath}`}
                 alt={cert.title}
                 className="w-full h-full object-contain p-2"
+                loading="lazy"
                 onError={(e) => {
+                  console.error(`Failed to load image: ${cert.imagePath}`);
                   const target = e.target as HTMLImageElement;
                   target.onerror = null;
-                  target.src = '/NEEVPATELWEB/certificates/Microsoft_AI_Skills_Badge.png';
+                  target.src = '/NEEVPATELWEB/certification/Microsoft AI Skills Fest.png';
                 }}
               />
             </div>
