@@ -5,11 +5,12 @@
   "license": "MIT",
   "homepage": "https://neevpatel018.github.io/NEEVPATELWEB",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development tsx server/index.ts",
+    "dev": "NODE_ENV=development tsx server/index.ts",
+    "client:dev": "vite",
     "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "check": "tsc",
     "db:push": "drizzle-kit push",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "NODE_ENV=production node dist/index.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist/public"
   },
