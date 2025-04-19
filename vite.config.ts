@@ -18,7 +18,7 @@ export default defineConfig({
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
-  base: "/NEEVPATELWEB/",
+  base: "https://neevpatel018.github.io/NEEVPATELWEB/",
   server: {
     port: 5173,
     host: true,
