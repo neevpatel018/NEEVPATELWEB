@@ -1,0 +1,15 @@
+node_modules
+.env
+.env.*
+.git
+.gitignore
+README.md
+LICENSE
+CONTRIBUTING.md
+package-lock.json
+yarn.lock
+public/certificates/*
+*.log
+*.pem
+*.key
+*.crt
