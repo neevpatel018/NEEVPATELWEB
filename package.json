@@ -1,4 +1,32 @@
 {
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
+}{
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
+}  // Remove this closing brace and everything before it
+{
+  "name": "rest-express",
+  ...
+}{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}ss
   "name": "rest-express",
   "version": "1.0.0",
   "type": "module",
